@@ -1,0 +1,46 @@
+{
+  "name": "twitter-fetch",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "description": "node-fetch for Twitter API",
+  "author": "InkoHX <me@inkohx.dev>",
+  "license": "MIT",
+  "keywords": [
+    "twitter-api",
+    "fetch"
+  ],
+  "exports": {
+    "import": "./dist/index.js"
+  },
+  "scripts": {
+    "prepare": "is-ci || husky install",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "lint": "prettier -c . && eslint './{test,src}/**/*'",
+    "lint:fix": "prettier -w . && eslint './{test,src}/**/*' --fix"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@nexterias/eslint-config-common": "^1.1.0",
+    "@nexterias/eslint-config-node": "^1.0.0",
+    "@nexterias/eslint-config-typescript": "^1.0.0",
+    "@types/node": "^18.11.9",
+    "@vitest/coverage-c8": "^0.25.3",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^13.0.4",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3",
+    "vitest": "^0.25.3"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
