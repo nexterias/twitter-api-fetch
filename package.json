@@ -18,7 +18,8 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "prettier -c . && eslint './{test,src}/**/*'",
-    "lint:fix": "prettier -w . && eslint './{test,src}/**/*' --fix"
+    "lint:fix": "prettier -w . && eslint './{test,src}/**/*' --fix",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "node-fetch": "^3.3.0"
