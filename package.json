@@ -13,13 +13,17 @@
   "exports": {
     "import": "./dist/index.js"
   },
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "prepare": "is-ci || husky install",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "prettier -c . && eslint './{test,src}/**/*'",
     "lint:fix": "prettier -w . && eslint './{test,src}/**/*' --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "tsc"
   },
   "dependencies": {
     "node-fetch": "^3.3.0"
