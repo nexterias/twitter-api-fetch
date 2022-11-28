@@ -39,15 +39,15 @@ jobs:
           pnpm run build
           pnpm publish --no-git-checks
 
-      - name: Create release body
-        uses: orhun/git-cliff-action@v1
-        id: git-cliff
-        with:
-          config: cliff.toml
-          args: --v -l --strip header
+      - name: Setup git-cliff
+        uses: kenji-miyake/setup-git-cliff@v1
 
-      - name: Create release note
+      - name: Create release body
+        id: cliff
+        run: echo "RELEASE_BODY=$(git cliff -l --strip header)" >> $GITHUB_OUTPUT
+
+      - name: Create draft release
         uses: softprops/action-gh-release@v1
         with:
           draft: true
-          body: ${{ steps.git-cliff.outputs.changelog }}
+          body: ${{ steps.cliff.outputs.RELEASE_BODY }}
