@@ -31,7 +31,7 @@ const client = new OAuth1a({
   secretConsumerKey: 'your secret consumer key',
 })
 
-const response = await fetch(
+const response = await client.fetch(
   `/1.1/statuses/update.json?status=${encodeURIComponent('Hello World')}`,
   { method: 'POST' }
 )
