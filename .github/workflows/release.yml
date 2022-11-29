@@ -47,8 +47,8 @@ jobs:
         with:
           result-encoding: string
           script: |
-            const body = await exec.exec('git', ['cliff', '-l', '--strip', 'header'])
-            return body
+            const { stdout } = await exec.getExecOutput('git', ['cliff', '-l', '--strip', 'header'])
+            return stdout
 
       - name: Create draft release
         uses: softprops/action-gh-release@v1
