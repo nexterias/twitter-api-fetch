@@ -13,7 +13,7 @@ It has a fetch-like implementation based on [node-fetch](https://github.com/node
 npm i twitter-api-fetch
 
 # Yarn
-yarn add twitter--api-fetch
+yarn add twitter-api-fetch
 
 # pnpm
 pnpm i twitter-api-fetch
