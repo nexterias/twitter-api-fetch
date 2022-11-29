@@ -42,12 +42,16 @@ jobs:
       - name: Setup git-cliff
         uses: kenji-miyake/setup-git-cliff@v1
 
-      - name: Create release body
-        id: cliff
-        run: echo "RELEASE_BODY=$(git cliff -l --strip header)" >> $GITHUB_OUTPUT
+      - uses: actions/github-script@v6
+        id: changelog
+        with:
+          result-encoding: string
+          script: |
+            const body = await exec.exec('git', ['cliff', '-l', '--strip', 'header'])
+            return body
 
       - name: Create draft release
         uses: softprops/action-gh-release@v1
         with:
           draft: true
-          body: ${{ steps.cliff.outputs.RELEASE_BODY }}
+          body: ${{ steps.changelog.outputs.result }}
