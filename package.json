@@ -42,7 +42,7 @@
     "@nexterias/eslint-config-common": "^1.1.0",
     "@nexterias/eslint-config-node": "^1.0.0",
     "@nexterias/eslint-config-typescript": "^1.0.0",
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.11.10",
     "@vitest/coverage-c8": "^0.25.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
