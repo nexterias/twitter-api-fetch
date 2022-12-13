@@ -6,7 +6,7 @@ specifiers:
   '@nexterias/eslint-config-common': ^1.1.0
   '@nexterias/eslint-config-node': ^1.0.0
   '@nexterias/eslint-config-typescript': ^1.0.0
-  '@types/node': ^18.11.13
+  '@types/node': ^18.11.14
   '@vitest/coverage-c8': ^0.25.7
   eslint: ^8.29.0
   eslint-config-prettier: ^8.5.0
@@ -27,7 +27,7 @@ devDependencies:
   '@nexterias/eslint-config-common': 1.1.0_eslint@8.29.0
   '@nexterias/eslint-config-node': 1.0.0_mv5n2d2jxpsi3wnawkiriddo5i
   '@nexterias/eslint-config-typescript': 1.0.0_jarbw5n5oy2c3hnzp3derzfgqq
-  '@types/node': 18.11.13
+  '@types/node': 18.11.14
   '@vitest/coverage-c8': 0.25.7
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0_eslint@8.29.0
@@ -422,8 +422,8 @@ packages:
     resolution: {integrity: sha512-qelS/Ra6sacc4loe/3MSjXNL1dNQ/GjxNHVzuChwMfmk7HuycRLVQN2qNY3XahK+fZc5E2szqQSKUyAF0E+2bg==}
     dev: true
 
-  /@types/node/18.11.13:
-    resolution: {integrity: sha512-IASpMGVcWpUsx5xBOrxMj7Bl8lqfuTY7FKAnPmu5cHkfQVWF8GulWS1jbRqA934qZL35xh5xN/+Xe/i26Bod4w==}
+  /@types/node/18.11.14:
+    resolution: {integrity: sha512-0KXV57tENYmmJMl+FekeW9V3O/rlcqGQQJ/hNh9r8pKIj304pskWuEd8fCyNT86g/TpO0gcOTiLzsHLEURFMIQ==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -2997,7 +2997,7 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite/3.2.4_@types+node@18.11.13:
+  /vite/3.2.4_@types+node@18.11.14:
     resolution: {integrity: sha512-Z2X6SRAffOUYTa+sLy3NQ7nlHFU100xwanq1WDwqaiFiCe+25zdxP1TfCS5ojPV2oDDcXudHIoPnI1Z/66B7Yw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3022,7 +3022,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.11.13
+      '@types/node': 18.11.14
       esbuild: 0.15.15
       postcss: 8.4.19
       resolve: 1.22.1
@@ -3055,7 +3055,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.4
       '@types/chai-subset': 1.3.3
-      '@types/node': 18.11.13
+      '@types/node': 18.11.14
       acorn: 8.8.1
       acorn-walk: 8.2.0
       chai: 4.3.7
@@ -3066,7 +3066,7 @@ packages:
       tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
-      vite: 3.2.4_@types+node@18.11.13
+      vite: 3.2.4_@types+node@18.11.14
     transitivePeerDependencies:
       - less
       - sass
