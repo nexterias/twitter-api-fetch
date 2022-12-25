@@ -1,7 +1,7 @@
 import { createHmac, randomBytes } from 'node:crypto'
 import { URL } from 'node:url'
 
-import fetch, { Request, RequestInfo, RequestInit, Response } from 'node-fetch'
+import fetch, { Request } from 'cross-fetch'
 import * as percent from './percent.js'
 
 type OAuth1Parameter = Map<string, string>
