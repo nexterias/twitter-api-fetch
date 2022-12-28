@@ -23,7 +23,7 @@ jobs:
         with:
           version: latest
 
-      - name: Use Node.js v18
+      - name: Use Node.js v${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
