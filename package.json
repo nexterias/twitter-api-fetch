@@ -37,8 +37,8 @@
     "node-fetch": "^3.3.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.1",
-    "@commitlint/config-conventional": "^17.4.0",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@nexterias/eslint-config-common": "^1.1.0",
     "@nexterias/eslint-config-node": "^1.0.0",
     "@nexterias/eslint-config-typescript": "^1.0.0",
