@@ -10,7 +10,7 @@
 ### Deno
 
 ```mjs
-import { oauth1a } from "https://deno.land/x/twitter-api-fetch@2.0.0/mod.ts";
+import { oauth1a } from "https://deno.land/x/twitter_api_fetch@2.0.0/mod.ts";
 
 const fetcher = await oauth1a({
   consumerKey: "Your consumer key here.",
