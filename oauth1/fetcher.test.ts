@@ -1,0 +1,3 @@
+Deno.test("fetcher", () => {
+  // TODO
+});

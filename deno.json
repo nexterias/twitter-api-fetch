@@ -1,0 +1,20 @@
+{
+  "tasks": {
+    "build:node": "deno run -A ./build.ts"
+  },
+  "lint": {
+    "files": {
+      "exclude": ["./npm", "./coverage"]
+    }
+  },
+  "fmt": {
+    "files": {
+      "exclude": ["./npm", "./coverage"]
+    }
+  },
+  "test": {
+    "files": {
+      "exclude": ["./npm", "./coverage"]
+    }
+  }
+}

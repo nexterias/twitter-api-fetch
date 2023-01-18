@@ -3,11 +3,37 @@
 [![codecov](https://codecov.io/gh/NEXTERIAS/twitter-api-fetch/branch/main/graph/badge.svg?token=9A7VFTMH3R)](https://codecov.io/gh/NEXTERIAS/twitter-api-fetch)
 [![Tests](https://github.com/NEXTERIAS/twitter-api-fetch/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/NEXTERIAS/twitter-api-fetch/actions/workflows/tests.yml)
 
-**twitter-api-fetch** is a Node.js library for accessing the Twitter API.
+**twitter-api-fetch** provides fetch-like access to the Twitter API.
 
-It has a fetch-like implementation based on [node-fetch](https://github.com/node-fetch/node-fetch).
+## Usage
 
-## Installation
+### Deno
+
+```mjs
+import { oauth1a } from "https://deno.land/x/twitter-api-fetch@2.0.0/mod.ts";
+
+const fetcher = await oauth1a({
+  consumerKey: "Your consumer key here.",
+  secretConsumerKey: "Your consumer key (secret) here.",
+  accessToken: "Your access token here.",
+  secretAccessToken: "Your access token (secret) here.",
+});
+
+const response = await fetcher("/2/tweets", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    text: "大いなる力には、大いなる責任が伴う",
+  }),
+});
+
+console.log(response);
+console.log(await response.json());
+```
+
+### Node.js
 
 ```sh
 npm i twitter-api-fetch
@@ -19,33 +45,40 @@ yarn add twitter-api-fetch
 pnpm i twitter-api-fetch
 ```
 
-## Usage
-
 ```mjs
-import { OAuth1a } from 'twitter-api-fetch'
+import { oauth1a } from "twitter-api-fetch";
 
-const client = new OAuth1a({
-  accessToken: 'your access token',
-  consumerKey: 'your consumer key',
-  secretAccessToken: 'your secret access token',
-  secretConsumerKey: 'your secret consumer key',
-})
+const fetcher = await oauth1a({
+  consumerKey: "Your consumer key here.",
+  secretConsumerKey: "Your consumer key (secret) here.",
+  accessToken: "Your access token here.",
+  secretAccessToken: "Your access token (secret) here.",
+});
 
-const response = await client.fetch(
-  `/1.1/statuses/update.json?status=${encodeURIComponent('Hello World')}`,
-  { method: 'POST' }
-)
+const response = await fetcher("/2/tweets", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    text: "大いなる力には、大いなる責任が伴う",
+  }),
+});
 
-console.log(await response.json())
+console.log(response);
+console.log(await response.json());
 ```
 
-## Supports
+### Cloudflare Workers
 
-- Authentication
-  - [x] OAuth 1.0a User Context
-  - [ ] OAuth 2.0 Authorization Code Flow with PKCE
-  - [ ] App only
-  - [ ] Basic authentication
+Coming soon...
+
+## Authentication
+
+- [x] OAuth 1.0a User Context
+- [ ] OAuth 2.0 Authorization Code Flow with PKCE
+- [ ] App only
+- [ ] Basic authentication
 
 ## License
 
