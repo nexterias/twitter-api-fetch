@@ -9,7 +9,7 @@
 
 ### Deno
 
-```mjs
+```js
 import { oauth1a } from "https://deno.land/x/twitter_api_fetch@2.0.0/mod.ts";
 
 const fetcher = await oauth1a({
@@ -45,7 +45,7 @@ yarn add twitter-api-fetch
 pnpm i twitter-api-fetch
 ```
 
-```mjs
+```js
 import { oauth1a } from "twitter-api-fetch";
 
 const fetcher = await oauth1a({
@@ -71,40 +71,9 @@ console.log(await response.json());
 
 ### Cloudflare Workers
 
-```ts
-import { oauth1a } from "twitter-api-fetch";
+`deno bundle` must be used. See [example](https://github.com/NEXTERIAS/twitter-api-fetch-examples/tree/main/cloudflare-workers)
 
-export interface Env {
-  TWITTER_API_ACCESS_TOKEN: string;
-  TWITTER_API_CONSUMER_KEY: string;
-  TWITTER_API_SECRET_ACCESS_TOKEN: string;
-  TWITTER_API_SECRET_CONSUMER_KEY: string;
-}
-
-export default {
-  async fetch(request, env, context) {
-    const fetcher = oauth1a({
-      consumerKey: env.TWITTER_API_CONSUMER_KEY,
-      secretConsumerKey: env.TWITTER_API_SECRET_CONSUMER_KEY,
-      accessToken: env.TWITTER_API_ACCESS_TOKEN,
-      secretAccessToken: env.TWITTER_API_SECRET_ACCESS_TOKEN,
-    });
-    const response = await fetch(
-      "/2/users/910317474951786496/tweets",
-    );
-
-    if (!response.ok) {
-      return new Response("Internal Server Error", { status: 500 });
-    }
-
-    const tweets = await response.json();
-
-    console.log(tweets);
-
-    return new Response(JSON.stringify(tweets));
-  },
-};
-```
+However, we are currently trying to figure out how to make it work without using the `deno bundle`.
 
 ## Authentication
 
