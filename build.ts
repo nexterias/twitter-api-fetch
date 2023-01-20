@@ -22,7 +22,7 @@ await build({
   package: {
     name: "twitter-api-fetch",
     version,
-    description: "fetch-like implementation for Twitter API",
+    description: "fetch-like implementation designed for Twitter API",
     author: "InkoHX <me@inkohx.dev>",
     homepage: "https://github.com/NEXTERIAS/twitter-api-fetch#readme",
     license: "MIT",

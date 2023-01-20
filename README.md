@@ -3,7 +3,7 @@
 [![codecov](https://codecov.io/gh/NEXTERIAS/twitter-api-fetch/branch/main/graph/badge.svg?token=9A7VFTMH3R)](https://codecov.io/gh/NEXTERIAS/twitter-api-fetch)
 [![Tests](https://github.com/NEXTERIAS/twitter-api-fetch/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/NEXTERIAS/twitter-api-fetch/actions/workflows/tests.yml)
 
-**twitter-api-fetch** provides fetch-like access to the Twitter API.
+fetch-like implementation designed for Twitter API
 
 ## Usage
 
