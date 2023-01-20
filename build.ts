@@ -7,6 +7,7 @@ await build({
   typeCheck: false,
   compilerOptions: {
     lib: ["dom", "esnext"],
+    target: "ES2020",
   },
   package: {
     name: "twitter-api-fetch",
@@ -29,8 +30,28 @@ await build({
   },
   shims: {
     crypto: true,
-    undici: true,
     deno: "dev",
+    custom: [{
+      package: {
+        name: "cross-fetch",
+        version: "~3.1.5",
+      },
+      globalNames: [
+        {
+          name: "fetch",
+          exportName: "default",
+        },
+        {
+          name: "Request",
+        },
+        {
+          name: "Response",
+        },
+        {
+          name: "Headers",
+        },
+      ],
+    }],
   },
 });
 
