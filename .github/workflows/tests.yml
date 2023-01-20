@@ -12,33 +12,26 @@ jobs:
   tests:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node: [18.x, 16.x]
-
     steps:
       - uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2
+      - uses: denoland/setup-deno@v1
         with:
-          version: latest
-
-      - name: Use Node.js v${{ matrix.node }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm i --frozen-lockfile
-
-      - name: Type check
-        run: pnpm run typecheck
+          deno-version: v1.x
 
       - name: Run linter
-        run: pnpm run lint
+        run: deno lint
+
+      - name: Run formatter
+        run: deno fmt --check
 
       - name: Run tests
-        run: pnpm run coverage
+        run: deno test -A --coverage=coverage
+
+      - name: Create coverage report
+        run: deno coverage ./coverage --lcov --output=coverage.lcov
 
       - uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.lcov
+          fail_ci_if_error: true
