@@ -90,7 +90,7 @@ export default {
       secretAccessToken: env.TWITTER_API_SECRET_ACCESS_TOKEN,
     });
     const response = await fetch(
-      "https://api.twitter.com/2/users/910317474951786496/tweets",
+      "/2/users/910317474951786496/tweets",
     );
 
     if (!response.ok) {
