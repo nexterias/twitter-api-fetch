@@ -71,9 +71,11 @@ console.log(await response.json());
 
 ### Cloudflare Workers
 
-`deno bundle` must be used. See [example](https://github.com/NEXTERIAS/twitter-api-fetch-examples/tree/main/cloudflare-workers)
+`deno bundle` must be used. See
+[example](https://github.com/NEXTERIAS/twitter-api-fetch-examples/tree/main/cloudflare-workers)
 
-However, we are currently trying to figure out how to make it work without using the `deno bundle`.
+However, we are currently trying to figure out how to make it work without using
+the `deno bundle`.
 
 ## Authentication
 
