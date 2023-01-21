@@ -72,6 +72,7 @@
     "https://deno.land/std@0.173.0/collections/red_black_tree.ts": "4fe76729e6d55e5ae9183e1a772af72063138485c9ffb235694ff6b3f97944bc",
     "https://deno.land/std@0.173.0/encoding/base64.ts": "7de04c2f8aeeb41453b09b186480be90f2ff357613b988e99fabb91d2eeceba1",
     "https://deno.land/std@0.173.0/fmt/colors.ts": "938c5d44d889fb82eff6c358bea8baa7e85950a16c9f6dae3ec3a7a729164471",
+    "https://deno.land/std@0.173.0/semver/mod.ts": "80acd488589001b15542847663101142fb251729a8c902ae60d66427a4a9eae1",
     "https://deno.land/std@0.173.0/testing/_diff.ts": "1a3c044aedf77647d6cac86b798c6417603361b66b54c53331b312caeb447aea",
     "https://deno.land/std@0.173.0/testing/_format.ts": "a69126e8a469009adf4cf2a50af889aca364c349797e63174884a52ff75cf4c7",
     "https://deno.land/std@0.173.0/testing/_time.ts": "fecaf6fc7277d240d11b0de2e93b1c93ebbb4a3a61f0cb0b1741f66f69a4d22b",
