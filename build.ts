@@ -67,3 +67,41 @@ await build({
 
 Deno.copyFileSync("./README.md", "./npm/README.md");
 Deno.copyFileSync("./LICENSE", "./npm/LICENSE");
+
+// Bundling for Edge runtime.
+{
+  const process = Deno.run({
+    cmd: ["deno", "bundle", "./mod.ts", "--", "./npm/edge.js"],
+  });
+  const status = await process.status();
+
+  if (!status.success) {
+    console.error("Bundling failed.");
+    Deno.exit(status.code);
+  }
+
+  const metadata = JSON.parse(
+    await Deno.readTextFile("./npm/package.json"),
+    // deno-lint-ignore no-explicit-any
+  ) as Record<string, any>;
+
+  await Deno.writeTextFile(
+    "./npm/package.json",
+    JSON.stringify(
+      {
+        ...metadata,
+        exports: {
+          ...metadata.exports,
+          "./edge": {
+            import: {
+              types: "./types/mod.d.ts",
+              default: "./edge.js",
+            },
+          },
+        },
+      },
+      null,
+      2,
+    ),
+  );
+}
