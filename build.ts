@@ -80,7 +80,10 @@ Deno.copyFileSync("./LICENSE", "./npm/LICENSE");
     Deno.exit(status.code);
   }
 
-  await Deno.writeTextFile('./npm/edge.d.ts', 'export * from "./types/mod.js";')
+  await Deno.writeTextFile(
+    "./npm/edge.d.ts",
+    'export * from "./types/mod.js";',
+  );
 
   const metadata = JSON.parse(
     await Deno.readTextFile("./npm/package.json"),
