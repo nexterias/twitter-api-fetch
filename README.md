@@ -103,14 +103,21 @@ export default {
     );
 
     if (!response.ok) {
-      return new Response("Internal Server Error", { status: 500 });
+      return new Response(
+        JSON.stringify({ message: "Internal Server Error" }),
+        { status: 500, headers: { "Content-Type": "application/json" } },
+      );
     }
 
     const tweets = await response.json();
 
     console.log(tweets);
 
-    return new Response(JSON.stringify(tweets));
+    return new Response(JSON.stringify(tweets), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   },
 };
 ```
