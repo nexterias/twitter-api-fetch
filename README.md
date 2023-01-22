@@ -10,7 +10,7 @@ fetch-like implementation designed for Twitter API
 ### Deno
 
 ```js
-import { oauth1a } from "https://deno.land/x/twitter_api_fetch@2.0.0/mod.ts";
+import { oauth1a } from "https://deno.land/x/twitter_api_fetch@2.1.1/mod.ts";
 
 const fetcher = await oauth1a({
   consumerKey: "Your consumer key here.",
