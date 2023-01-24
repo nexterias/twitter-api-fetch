@@ -127,7 +127,7 @@ export default {
 - [x] OAuth 1.0a User Context
 - [ ] OAuth 2.0 Authorization Code Flow with PKCE
 - [ ] App only
-- [ ] Basic authentication
+- [x] Basic authentication
 
 ## License
 
