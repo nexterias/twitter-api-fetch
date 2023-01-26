@@ -8,6 +8,8 @@
 1. Run `deno test`, `deno lint` and `deno fmt`
 1. **Submit a pull request**
 
-## Determine commit message or pull request title
+## Rules
 
-Follow [Conventional Commits](https://www.conventionalcommits.org).
+### commit message and pull request title
+
+Follow [Conventional Commits](https://www.conventionalcommits.org)
