@@ -28,6 +28,9 @@ jobs:
         with:
           deno-version: v1.x
 
+      - name: Testing
+        run: deno test
+
       - name: Build
         run: deno task build:node ${{ github.ref }}
 

@@ -15,6 +15,7 @@ await build({
   entryPoints: ["./mod.ts"],
   outDir: "./npm",
   typeCheck: false,
+  test: false, // NOTE: 一時的に無効
   compilerOptions: {
     lib: ["dom", "esnext"],
     target: "ES2020",
