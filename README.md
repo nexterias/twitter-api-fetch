@@ -129,7 +129,7 @@ export default {
 - [x] App only
 - [x] Basic authentication
 
-> Note Regarding **OAuth 2.0 Authorization Code Flow with PKCE**,
+> **Note** Regarding **OAuth 2.0 Authorization Code Flow with PKCE**,
 > `twitter-api-fetch` does not currently provide any functionality to assist in
 > the process of issuing access tokens.
 
