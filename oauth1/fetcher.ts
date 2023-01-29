@@ -4,6 +4,33 @@ import * as OAuth1 from "./oauth1a.ts";
 import * as Hmac from "./hmac.ts";
 import { resolveURL } from "../utils/url.ts";
 
+/**
+ * {@link https://developer.twitter.com/en/docs/authentication/oauth-1-0a OAuth 1.0a | Docs | Twitter Developer Platform}
+ *
+ * ```js
+ * import { oauth1a } from "https://deno.land/x/twitter_api_fetch@2.1.1/mod.ts";
+ *
+ * const fetcher = await oauth1a({
+ *   consumerKey: "Your consumer key here.",
+ *   secretConsumerKey: "Your consumer key (secret) here.",
+ *   accessToken: "Your access token here.",
+ *   secretAccessToken: "Your access token (secret) here.",
+ * });
+ *
+ * const response = await fetcher("/2/tweets", {
+ *   method: "POST",
+ *   headers: {
+ *     "Content-Type": "application/json",
+ *   },
+ *   body: JSON.stringify({
+ *     text: "大いなる力には、大いなる責任が伴う",
+ *   }),
+ * });
+ *
+ * console.log(response);
+ * console.log(await response.json());
+ * ```
+ */
 export const fetcher = async (credentials: Readonly<OAuth1aCredential>) => {
   const signingKey = await createSigningKey({
     secretAccessToken: credentials.secretAccessToken,
