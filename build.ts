@@ -1,5 +1,5 @@
 import { build, emptyDir } from "https://deno.land/x/dnt@0.33.0/mod.ts";
-import * as semver from "https://deno.land/std@0.173.0/semver/mod.ts";
+import * as semver from "https://deno.land/std@0.175.0/semver/mod.ts";
 
 const trimVersion = (str: string) =>
   /^refs\/tags\/v(.+)$/.exec(str)?.at(1)?.trim();
