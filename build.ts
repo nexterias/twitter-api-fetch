@@ -25,14 +25,14 @@ await build({
     version,
     description: "fetch-like implementation designed for Twitter API",
     author: "InkoHX <me@inkohx.dev>",
-    homepage: "https://github.com/NEXTERIAS/twitter-api-fetch#readme",
+    homepage: "https://github.com/nexterias/twitter-api-fetch#readme",
     license: "MIT",
     repository: {
       type: "git",
-      url: "https://github.com/NEXTERIAS/twitter-api-fetch.git",
+      url: "https://github.com/nexterias/twitter-api-fetch.git",
     },
     bugs: {
-      url: "https://github.com/NEXTERIAS/twitter-api-fetch/issues",
+      url: "https://github.com/nexterias/twitter-api-fetch/issues",
     },
     keywords: [
       "twitter-api",
