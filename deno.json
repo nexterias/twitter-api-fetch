@@ -3,17 +3,14 @@
   "version": "3.0.0",
   "exports": "./mod.ts",
   "lock": false,
+  "exclude": ["./coverage"],
   "publish": {
-    "exclude": ["./.github/**/*", "./cliff.toml", "./vscode/**/*"]
-  },
-  "lint": {
-    "exclude": ["./coverage"]
-  },
-  "fmt": {
-    "exclude": ["./coverage"]
-  },
-  "test": {
-    "exclude": ["./coverage"]
+    "exclude": [
+      "./.github/**/*",
+      "./cliff.toml",
+      "./vscode/**/*",
+      "./coverage/**/*"
+    ]
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@^0.219.1",
