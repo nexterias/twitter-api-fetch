@@ -9,11 +9,11 @@ fetch-like implementation designed for Twitter API
 
 ## Usage
 
-> [!Important] Since v3,
-> [twitter-api-fetch](https://jsr.io/@nexterias/twitter-api-fetch) is now
-> published in [JSR](https://jsr.io). If you are using
-> [deno.land/x/twitter_api_fetch](https://deno.land/x/twitter_api_fetch) or
-> [npm package](https://npmjs.com/package/twitter-api-fetch), please use JSR.
+<!-- deno-fmt-ignore-start -->
+> [!Important]
+> Since v3, [twitter-api-fetch](https://jsr.io/@nexterias/twitter-api-fetch) is now published in [JSR](https://jsr.io).
+> If you are using [deno.land/x/twitter_api_fetch](https://deno.land/x/twitter_api_fetch) or [npm package](https://npmjs.com/package/twitter-api-fetch), please use JSR.
+<!-- deno-fmt-ignore-end -->
 
 ```bash
 $ deno add @nexterias/twitter-api-fetch # Deno
