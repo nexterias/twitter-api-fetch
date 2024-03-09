@@ -17,7 +17,7 @@ export const combineKeys = (
     OAuth1aCredential,
     "secretAccessToken" | "secretConsumerKey"
   >,
-) =>
+): string =>
   [
     credentials.secretConsumerKey,
     credentials.secretAccessToken,
@@ -28,7 +28,7 @@ export const createSigningKey = (
     OAuth1aCredential,
     "secretAccessToken" | "secretConsumerKey"
   >,
-) => {
+): Promise<CryptoKey> => {
   const key = combineKeys(credentials);
   const textEncoder = new TextEncoder();
 

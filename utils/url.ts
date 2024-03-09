@@ -1,4 +1,4 @@
-export const ALLOW_HOSTNAMES = new Set([
+export const ALLOW_HOSTNAMES: Set<string> = new Set([
   "gnip-stream.twitter.com",
   "data-api.twitter.com",
   "gnip-stream.gnip.com",
@@ -6,7 +6,7 @@ export const ALLOW_HOSTNAMES = new Set([
   "gnip-api.twitter.com",
 ]);
 
-export const resolveURL = (info: string | Request) => {
+export const resolveURL = (info: string | Request): URL => {
   const url = new URL(
     typeof info === "string" ? info : info.url,
     "https://api.twitter.com",

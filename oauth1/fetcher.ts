@@ -31,7 +31,11 @@ import { resolveURL } from "../utils/url.ts";
  * console.log(await response.json());
  * ```
  */
-export const fetcher = async (credentials: Readonly<OAuth1aCredential>) => {
+export const fetcher = async (
+  credentials: Readonly<OAuth1aCredential>,
+): Promise<
+  (input: string | Request, init?: RequestInit) => Promise<Response>
+> => {
   const signingKey = await createSigningKey({
     secretAccessToken: credentials.secretAccessToken,
     secretConsumerKey: credentials.secretConsumerKey,
