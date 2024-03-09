@@ -5,7 +5,7 @@ import {
   OAuth1aSignedParameters,
 } from "./types.ts";
 import * as percent from "../utils/percent.ts";
-import { base64encode } from "../deps.ts";
+import { encodeBase64 } from "@std/encoding/base64";
 
 /**
  * {@link https://developer.twitter.com/en/docs/authentication/oauth-1-0a/creating-a-signature Creating a signature | Docs | Twitter Developer Platform} - Getting a signing key
@@ -17,7 +17,7 @@ export const combineKeys = (
     OAuth1aCredential,
     "secretAccessToken" | "secretConsumerKey"
   >,
-) =>
+): string =>
   [
     credentials.secretConsumerKey,
     credentials.secretAccessToken,
@@ -28,7 +28,7 @@ export const createSigningKey = (
     OAuth1aCredential,
     "secretAccessToken" | "secretConsumerKey"
   >,
-) => {
+): Promise<CryptoKey> => {
   const key = combineKeys(credentials);
   const textEncoder = new TextEncoder();
 
@@ -73,7 +73,7 @@ export const sign = async (
     textEncoder.encode(message),
   );
 
-  clonedParams.set("oauth_signature", base64encode(hash));
+  clonedParams.set("oauth_signature", encodeBase64(hash));
 
   return clonedParams;
 };

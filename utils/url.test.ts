@@ -2,7 +2,7 @@ import {
   assertInstanceOf,
   assertStrictEquals,
   assertThrows,
-} from "../deps_test.ts";
+} from "@std/assert";
 import { resolveURL } from "./url.ts";
 
 Deno.test("Returns URL (string) when a Request object is passed", () => {

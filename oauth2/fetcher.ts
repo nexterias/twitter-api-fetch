@@ -11,7 +11,9 @@ import { resolveURL } from "../utils/url.ts";
  * console.log(await fetcher("/2/tweets"));
  * ```
  */
-export const fetcher = (bearerToken: string) => {
+export const fetcher = (
+  bearerToken: string,
+): (input: string | Request, init?: RequestInit) => Promise<Response> => {
   return (input: string | Request, init?: RequestInit) => {
     const url = resolveURL(input);
     const request = new Request(url, init);

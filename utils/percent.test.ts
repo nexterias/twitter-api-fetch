@@ -1,4 +1,4 @@
-import { assertStrictEquals } from "../deps_test.ts";
+import { assertStrictEquals } from "@std/assert";
 import * as percent from "./percent.ts";
 
 Deno.test("encode", () => {
