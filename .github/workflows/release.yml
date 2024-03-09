@@ -1,45 +1,25 @@
 name: Release
 
 on:
+  release:
+    types:
+      - released
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 permissions:
   contents: read
 
 jobs:
-  publish:
+  draft:
+    name: Create draft release
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Use Node.js v18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          registry-url: 'https://registry.npmjs.org'
-
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-
-      - name: Testing
-        run: deno test
-
-      - name: Build
-        run: deno task build:node ${{ github.ref }}
-
-      - name: Publish to registry.npmjs.com
-        run: |
-          cd ./npm
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Setup git-cliff
         uses: kenji-miyake/setup-git-cliff@v1
@@ -57,3 +37,23 @@ jobs:
         with:
           draft: true
           body: ${{ steps.changelog.outputs.result }}
+
+  publish:
+    name: Publish to JSR
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+
+      - name: Publish (dry-run)
+        run: deno publish --dry-run
+
+      - name: Publish
+        run: deno publish
