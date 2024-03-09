@@ -1,5 +1,5 @@
 import * as hmac from "./hmac.ts";
-import { assertStrictEquals } from "../deps_test.ts";
+import { assertStrictEquals } from "@std/assert";
 import * as oauth1a from "./oauth1a.ts";
 
 const credentials = {

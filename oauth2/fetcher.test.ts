@@ -1,9 +1,5 @@
-import {
-  assertInstanceOf,
-  assertSpyCalls,
-  assertStrictEquals,
-  stub,
-} from "../deps_test.ts";
+import { assertInstanceOf, assertStrictEquals } from "@std/assert";
+import { assertSpyCalls, stub } from "@std/testing/mock";
 import { fetcher as oauth2 } from "./fetcher.ts";
 
 Deno.test('When calling fetch, the "Authorization" header must be set to the correct value.', async () => {

@@ -1,4 +1,4 @@
-import { base64encode } from "../deps.ts";
+import { encodeBase64 } from "@std/encoding/base64";
 import { OAuth1aBaseParameters, OAuth1aSignedParameters } from "./types.ts";
 import * as percent from "../utils/percent.ts";
 
@@ -10,7 +10,7 @@ export const createBaseParams = (
 
   return new Map([
     ["oauth_consumer_key", consumerKey],
-    ["oauth_nonce", base64encode(randomBytes)],
+    ["oauth_nonce", encodeBase64(randomBytes)],
     ["oauth_timestamp", (Date.now() / 1000).toFixed(0)],
     ["oauth_token", accessToken],
     ["oauth_version", "1.0"],

@@ -1,20 +1,19 @@
 {
-  "tasks": {
-    "build:node": "deno run -A ./build.ts"
-  },
+  "name": "@nexterias/twitter-api-fetch",
+  "version": "3.0.0",
+  "exports": "./mod.ts",
   "lint": {
-    "files": {
-      "exclude": ["./npm", "./coverage"]
-    }
+    "exclude": ["./coverage"]
   },
   "fmt": {
-    "files": {
-      "exclude": ["./npm", "./coverage"]
-    }
+    "exclude": ["./coverage"]
   },
   "test": {
-    "files": {
-      "exclude": ["./npm", "./coverage"]
-    }
+    "exclude": ["./coverage"]
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@^0.219.1",
+    "@std/encoding": "jsr:@std/encoding@^0.219.1",
+    "@std/testing": "jsr:@std/testing@^0.219.1"
   }
 }

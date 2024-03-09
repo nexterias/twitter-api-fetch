@@ -1,5 +1,43 @@
 {
-  "version": "2",
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@std/assert@^0.219.1": "jsr:@std/assert@0.219.1",
+      "jsr:@std/async@^0.219.1": "jsr:@std/async@0.219.1",
+      "jsr:@std/data-structures@^0.219.1": "jsr:@std/data-structures@0.219.1",
+      "jsr:@std/encoding@^0.219.1": "jsr:@std/encoding@0.219.1",
+      "jsr:@std/fmt@^0.219.1": "jsr:@std/fmt@0.219.1",
+      "jsr:@std/testing@^0.219.1": "jsr:@std/testing@0.219.1"
+    },
+    "jsr": {
+      "@std/assert@0.219.1": {
+        "integrity": "e76c2a1799a78f0f4db7de04bdc9b908a7a4b821bb65eda0285885297d4fb8af",
+        "dependencies": [
+          "jsr:@std/fmt@^0.219.1"
+        ]
+      },
+      "@std/async@0.219.1": {
+        "integrity": "9401a6aa5a3292d639b71beceb19fb53c2148238c4d36b3ddf8c30980baa10e0"
+      },
+      "@std/data-structures@0.219.1": {
+        "integrity": "f79ca4db7f126aed00529f1a63e975dc523f9b43939eec84e7a520b8425a8762"
+      },
+      "@std/encoding@0.219.1": {
+        "integrity": "77b30e481a596cfb2a8f2f38c3165e6035a4f76a7259bf89b6a622ceaf57d575"
+      },
+      "@std/fmt@0.219.1": {
+        "integrity": "2432152e927df249a207177aa048a6d9465956ea0047653ee6abd4f514db504f"
+      },
+      "@std/testing@0.219.1": {
+        "integrity": "a87945273d41853cd5afbdd4d6cea123c6126d005a645c10f487ac35e31da75b",
+        "dependencies": [
+          "jsr:@std/assert@^0.219.1",
+          "jsr:@std/async@^0.219.1",
+          "jsr:@std/data-structures@^0.219.1"
+        ]
+      }
+    }
+  },
   "remote": {
     "https://deno.land/std@0.111.0/_util/assert.ts": "2f868145a042a11d5ad0a3c748dcf580add8a0dbc0e876eaa0026303a5488f58",
     "https://deno.land/std@0.111.0/_util/os.ts": "dfb186cc4e968c770ab6cc3288bd65f4871be03b93beecae57d657232ecffcac",
@@ -136,5 +174,12 @@
     "https://deno.land/x/ts_morph@17.0.1/common/ts_morph_common.js": "49a79124b941ba2b35d81ac9eb90fc33c957b2640cdb97569c1941bac5a3bbdb",
     "https://deno.land/x/ts_morph@17.0.1/common/typescript.d.ts": "57e52a0882af4e835473dda27e4316cc31149866970210f9f79b940e916b7838",
     "https://deno.land/x/ts_morph@17.0.1/common/typescript.js": "5dd669eb199ee2a539924c63a92e23d95df43dfe2fbe3a9d68c871648be1ad5e"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@^0.219.1",
+      "jsr:@std/encoding@^0.219.1",
+      "jsr:@std/testing@^0.219.1"
+    ]
   }
 }

@@ -1,9 +1,6 @@
-import {
-  assertInstanceOf,
-  assertStrictEquals,
-  FakeTime,
-  stub,
-} from "../deps_test.ts";
+import { assertInstanceOf, assertStrictEquals } from "@std/assert";
+import { stub } from "@std/testing/mock";
+import { FakeTime } from "@std/testing/time";
 import { createBaseParams, createHttpHeader } from "./oauth1a.ts";
 
 Deno.test("createBaseParams", () => {

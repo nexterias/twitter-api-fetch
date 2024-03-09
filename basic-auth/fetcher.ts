@@ -1,4 +1,4 @@
-import { base64encode } from "../deps.ts";
+import { encodeBase64 } from "@std/encoding/base64";
 import { resolveURL } from "../utils/url.ts";
 
 /**
@@ -21,7 +21,7 @@ import { resolveURL } from "../utils/url.ts";
  * @param password your password
  */
 export const fetcher = (username: string, password: string) => {
-  const token = base64encode(`${username}:${password}`);
+  const token = encodeBase64(`${username}:${password}`);
 
   return (input: string | Request, init?: RequestInit) => {
     const url = resolveURL(input);
