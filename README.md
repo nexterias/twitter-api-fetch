@@ -2,51 +2,31 @@
 
 [![codecov](https://codecov.io/gh/nexterias/twitter-api-fetch/branch/main/graph/badge.svg?token=9A7VFTMH3R)](https://codecov.io/gh/nexterias/twitter-api-fetch)
 [![Tests](https://github.com/nexterias/twitter-api-fetch/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/nexterias/twitter-api-fetch/actions/workflows/tests.yml)
+[![JSR](https://jsr.io/badges/@nexterias/twitter-api-fetch)](https://jsr.io/@nexterias/twitter-api-fetch)
+[![JSR Score](https://jsr.io/badges/@nexterias/twitter-api-fetch/score)](https://jsr.io/@nexterias/twitter-api-fetch)
 
 fetch-like implementation designed for Twitter API
 
 ## Usage
 
-### Deno
+> [!Important] Since v3,
+> [twitter-api-fetch](https://jsr.io/@nexterias/twitter-api-fetch) is now
+> published in [JSR](https://jsr.io). If you are using
+> [deno.land/x/twitter_api_fetch](https://deno.land/x/twitter_api_fetch) or
+> [npm package](https://npmjs.com/package/twitter-api-fetch), please use JSR.
 
-```js
-import { oauth1a } from "https://deno.land/x/twitter_api_fetch@2.1.1/mod.ts";
+```bash
+$ deno add @nexterias/twitter-api-fetch # Deno
 
-const fetcher = await oauth1a({
-  consumerKey: "Your consumer key here.",
-  secretConsumerKey: "Your consumer key (secret) here.",
-  accessToken: "Your access token here.",
-  secretAccessToken: "Your access token (secret) here.",
-});
+$ bunx jsr add @nexterias/twitter-api-fetch # Bun
 
-const response = await fetcher("/2/tweets", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    text: "大いなる力には、大いなる責任が伴う",
-  }),
-});
-
-console.log(response);
-console.log(await response.json());
-```
-
-### Node.js
-
-```sh
-npm i twitter-api-fetch
-
-# Yarn
-yarn add twitter-api-fetch
-
-# pnpm
-pnpm i twitter-api-fetch
+$ npx jsr add @nexterias/twitter-api-fetch # npm
+$ yarn dlx jsr add @nexterias/twitter-api-fetch # yarn
+$ pnpm dlx jsr add @nexterias/twitter-api-fetch # pnpm
 ```
 
 ```js
-import { oauth1a } from "twitter-api-fetch";
+import { oauth1a } from "@nexterias/twitter-api-fetch";
 
 const fetcher = await oauth1a({
   consumerKey: "Your consumer key here.",
@@ -72,7 +52,7 @@ console.log(await response.json());
 ### Cloudflare Workers
 
 ```ts
-import { oauth1a } from "twitter-api-fetch/edge";
+import { oauth1a } from "@nexterias/twitter-api-fetch";
 
 export interface Env {
   TWITTER_API_ACCESS_TOKEN: string;
