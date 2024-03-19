@@ -4,7 +4,7 @@ import { resolveURL } from "../utils/url.ts";
  * {@link https://developer.twitter.com/en/docs/authentication/oauth-2-0 OAuth 2.0 | Docs | Twitter Developer Platform}
  *
  * ```js
- * import { oauth2 } from "https://deno.land/x/twitter_api_fetch/mod.ts";
+ * import { oauth2 } from "jsr:@nexterias/twitter-api-fetch";
  *
  * const fetcher = oauth2("bearer token here.");
  *

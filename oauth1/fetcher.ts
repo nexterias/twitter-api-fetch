@@ -8,7 +8,7 @@ import { resolveURL } from "../utils/url.ts";
  * {@link https://developer.twitter.com/en/docs/authentication/oauth-1-0a OAuth 1.0a | Docs | Twitter Developer Platform}
  *
  * ```js
- * import { oauth1a } from "https://deno.land/x/twitter_api_fetch@2.1.1/mod.ts";
+ * import { oauth1a } from "jsr:@nexterias/twitter-api-fetch";
  *
  * const fetcher = await oauth1a({
  *   consumerKey: "Your consumer key here.",
