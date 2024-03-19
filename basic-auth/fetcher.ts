@@ -7,7 +7,7 @@ import { resolveURL } from "../utils/url.ts";
  * See details: {@link https://developer.twitter.com/en/docs/authentication/basic-auth Basic authentication | Docs | Twitter Developer Platform}
  *
  * ```js
- * import { basicAuth } from "https://deno.land/x/twitter_api_fetch/mod.ts";
+ * import { basicAuth } from "jsr:@nexterias/twitter-api-fetch";
  *
  * const fetcher = basicAuth("example", "example");
  * const response = await fetcher("https://api.twitter.com/1.1/account_activity/webhooks.json");
