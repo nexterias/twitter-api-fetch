@@ -31,7 +31,7 @@ jobs:
       - name: Create coverage report
         run: deno coverage ./coverage --lcov --output=coverage.lcov
 
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7
         with:
           file: ./coverage.lcov
 
