@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - uses: denoland/setup-deno@v1
         with:
@@ -31,7 +31,7 @@ jobs:
       - name: Create coverage report
         run: deno coverage ./coverage --lcov --output=coverage.lcov
 
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4
         with:
           file: ./coverage.lcov
 
